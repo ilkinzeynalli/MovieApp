@@ -1,4 +1,18 @@
-<h2>{{ "Title: " + getTitle() }}</h2>
 
-<h3>{{movie.id}}</h3>
-<h3>{{movie.name}}</h3>
+<div class="card">
+    <div class="card-header">
+        {{title}}
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let movie of movies">
+            <div class="row">
+                <div class="col-md-11">
+                    <span class="badge bg-primary">{{movie.id}}</span> {{movie.name}}
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn-close" aria-label="Close"></button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

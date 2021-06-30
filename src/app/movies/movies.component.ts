@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Movie } from '../models/movie';
+import { movies } from '../models/movies.datasource';
 
 @Component({
   selector: 'app-movies',
@@ -7,12 +8,9 @@ import { Movie } from '../models/movie';
   styleUrls: ['movies.component.css'],
 })
 export class MoviesComponent {
-  title = 'Movies List';
+  title = 'Movie List';
   
-  movie:Movie = {
-        id:1,
-        name: "Askin Gucu"
-  };
+  movies:Movie[] = movies;
 
   getTitle() {
     return this.title;
