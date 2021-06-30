@@ -1,14 +1,20 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
+import { Movie } from '../models/movie';
 
 @Component({
-    selector:'app-movies',
-    templateUrl: './movies.component.html',
-    styles:[`
-        h2{
-            color:red;
-        }
-    `]
+  selector: 'app-movies',
+  templateUrl: 'movies.component.html',
+  styleUrls: ['movies.component.css'],
 })
-export class MoviesComponent{
+export class MoviesComponent {
+  title = 'Movies List';
+  
+  movie:Movie = {
+        id:1,
+        name: "Askin Gucu"
+  };
 
+  getTitle() {
+    return this.title;
+  }
 }
