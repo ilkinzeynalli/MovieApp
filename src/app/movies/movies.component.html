@@ -1,10 +1,23 @@
-
+<div class="card mb-3" *ngIf="selectedItem">
+    <div class="card-body">
+        <span class="badge bg-warning mb-2">id: {{selectedItem.id}} name: {{selectedItem.name}}</span>
+        <div class="input-group">
+            <input class='form-control' type='text' [(ngModel)]="selectedItem.name"/>
+            <div class="input-group-append">
+                <button class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="card">
     <div class="card-header">
         {{title}}
     </div>
     <ul class="list-group">
-        <li class="list-group-item" *ngFor="let movie of movies">
+        <li class="list-group-item" 
+            *ngFor="let movie of movies" (click)="onSelect(movie)"
+            [class.active]="movie===selectedItem"
+        >
             <div class="row">
                 <div class="col-md-11">
                     <span class="badge bg-primary">{{movie.id}}</span> {{movie.name}}

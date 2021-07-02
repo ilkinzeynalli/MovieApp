@@ -9,10 +9,14 @@ import { movies } from '../models/movies.datasource';
 })
 export class MoviesComponent {
   title = 'Movie List';
-  
+  selectedItem: Movie;
   movies:Movie[] = movies;
 
   getTitle() {
     return this.title;
+  }
+
+  onSelect(movie: Movie){
+    this.selectedItem = movie;
   }
 }
