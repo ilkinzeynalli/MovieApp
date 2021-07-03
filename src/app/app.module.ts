@@ -11,6 +11,9 @@ import { LoggingComponent } from './logging/logging.component';
 import { AppRouteModule } from './app-route.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryService } from './services/in-memory-db.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRouteModule
+    AppRouteModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryService),
   ],
   providers: [],
   bootstrap: [AppComponent]
