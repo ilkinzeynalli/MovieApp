@@ -1,0 +1,16 @@
+<div class="card mb-3"  *ngFor="let movie of movies">
+    <div class="row">
+      <div class="col-3">
+        <img src="assets/images/{{movie.image}}" class="card-img" style="width: 100px;height: 100px;">
+      </div>
+      <div class="col-9">
+        <div class="card-body">
+          <h5 class="card-title">{{movie.name}}</h5>
+          <p class="card-text">{{movie.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="moviesCount > 4" class="text-center">
+    <button routerLink="/movies" class="btn btn-primary">More Movies</button>
+  </div>

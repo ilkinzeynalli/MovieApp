@@ -1,5 +1,7 @@
 export class Movie
 {
-    id:number;
-    name:string;
+    id: number;
+    name: string;
+    description: string;
+    image: string;
 }
