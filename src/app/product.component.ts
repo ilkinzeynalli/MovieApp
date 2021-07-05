@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Product } from "./models/product.model";
 import { ProductRepository } from "./models/repository.model";
 
 @Component({
@@ -8,8 +9,11 @@ import { ProductRepository } from "./models/repository.model";
 })
 export class ProductComponent{
     productRepository: ProductRepository;
+    product: Product;
 
     constructor(){
         this.productRepository = new ProductRepository();
+        this.product = this.productRepository.getProductById(1);
     }
+
 }
