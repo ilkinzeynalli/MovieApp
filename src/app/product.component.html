@@ -1,12 +1,14 @@
-<div class="bg-primary text-white m-2 p-2">
-    There are {{productRepository.getProducts().length}} products in the repository
+<div  class="text-white" [class]="{'bg-primary': (product.price ?? 0) <= 2000}">
+    Katologdaki ilk urun {{ productRepository.getProductById(1).name }}
 </div>
 
+<div class="text-white" [class]="getClasses(2)">
+    Katologdaki ilk urun {{ productRepository.getProductById(1).name }}
+</div>
 
-<h2>{{product.name}}</h2> <!--Interpelation binding-->
-<h2 [textContent]="product.name"></h2> <!--Property binding-->
+<button class="btn btn-primary" [class.disabled]="disabled">Elave et</button>
 
-<img src="assets/img/{{ product.imageUrl }}" width="300" height="300" class="m-2"/>
 
-<img [src]="'assets/img/' + product.imageUrl" width="300" height="300" class="m-2"/>
-
+<div [ngClass]="getClassesMap(3)">
+    Katologdaki ilk urun {{ productRepository.getProductById(3).name }}
+</div>
