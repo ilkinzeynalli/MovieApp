@@ -8,7 +8,7 @@ export class ProductRepository{
         this.products = new SimpleDatasource().getProducts();
     }
 
-    getProduts():Product[]{
+    getProducts():Product[]{
         return this.products;
     }
 
