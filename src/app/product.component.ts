@@ -28,8 +28,7 @@ export class ProductComponent{
 
         return {
             "bg-primary": (product.price ?? 0) <= 2000,
-            "bg-secondary": (product.price ?? 0) > 2000,
-            "text-white": product.name == "Product 2"
+            "bg-secondary": (product.price ?? 0) > 2000
         };
     }
 
